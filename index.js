@@ -2,7 +2,7 @@ let express = require("express");
 let cors = require("cors");
 let bodyParser = require("body-parser");
 let app = express();
-app.use(cors({ credentials: true, origin: "http://10.65.106.58:8080" }));
+app.use(cors({ credentials: true, origin: "http://localhost:4000" }));
 app.use(bodyParser.raw({ type: "*/*" }));
 
 let generateId = function() {
@@ -71,4 +71,4 @@ app.post("/login", function(req, res) {
   }
   res.send(JSON.stringify({ success: false }));
 });
-app.listen(4000, "10.65.106.58");
+app.listen(4000);
